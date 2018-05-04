@@ -51,3 +51,21 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - `$ smashing start &`to start program and be able to close terminal. And after this call it going to show the PID of process something like this `11912`
 - but it's intersting after `sudo netstat -plunt` I see the name/pid `11929/thin -R confi`. I'll try to `kill 11912` and check what happens. Nothng happes
 - killing via `sudo netstat -plunt` and `kill` PID I found listining `0.0.0.0:3030`
+
+## Creating 2 Widgets updated with JOB.
+- At `/dashboards/sample.rb` I create two widjets with `data-view="Number"` and two different **data-id**: `data-id="wiether_sault"` and  `data-id="wiether_nsk"`.
+- `data-view="Number"` - it's a type of widget.  
+```
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wiether_sault" data-view="Number" data-title="Current Valuation"  data-prefix="C"></div>
+    </li>
+     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wiether_nsk" data-view="Number" data-title="Current Valuation"  data-prefix="C"></div>
+    </li>
+```
+- **data-id**: `data-id="wiether_sault"` and  `data-id="wiether_nsk"` these are addresses of widgets. On this adreses I going to send information.
+- At the `jobs\sample.rb` I add two evetns that going to send infromation on newly created widgets using it's adresses. `data-id="wiether_sault"` and  `data-id="wiether_nsk"
+```
+  send_event('wiether_sault',   { value: rand(100) })
+  send_event('wiether_nsk',   { value: rand(100) })
+```
