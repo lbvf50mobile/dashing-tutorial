@@ -12,3 +12,10 @@ Take a look for a little bit I made decision to use [Smashing](https://smashing.
 - `$ smashing start` boom Error **`rescue in create_default_data_source': No source of timezone data could be found. (TZInfo::DataSourceNotFound)**
 
 #### It was very predicatble that it's big problem to run something on windows. Going to try Ubuntu.
+
+### 1.5. Comming back to Linux (this is my just for log). 
+Because it's as usually failed to fire something a slightly serious using Windows and Ruby. I came back to my virtual UBUNTU. First I need to chech what servers are runing.
+- `$ sudo netstat -plunt` and if I found that some servers run I going to turn them off.
+- `$ sudo systemctl status nginx` and `$ sudo systemctl status apache2` or `$ sudo systemctl -all | grep -E 'apache|nginx'` find what is working.
+- `$ sudo systemctl stop apache2`  stop apache service.
+- `$ sudo netstat -plunt` to check that the ports dose not listen any more.
