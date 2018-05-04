@@ -39,7 +39,7 @@ alias s='git status'
 ```
 So getting new verison of my code from Windows, I need just print `$ pl`.  
 - Ok. Fire `$ bundle`
-- `$ smahing start` it works.
+- `$ smahing start` it works. And it's listing for `0.0.0.0:3030` this meand it's going to listen for all interfaces.
 - `ifconfig -a` get my local IP.
 -  `http://192.168.1.39:3030/sample` in wondows browser and it's works fine. Iable to see this dashboard at the Linux Virtual machine, from my Windows workstaton.
 **Success the dashboard available**
