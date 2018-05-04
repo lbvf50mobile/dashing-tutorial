@@ -56,16 +56,16 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - At `/dashboards/sample.rb` I create two widjets with `data-view="Number"` and two different **data-id**: `data-id="wiether_sault"` and  `data-id="wiether_nsk"`.
 - `data-view="Number"` - it's a type of widget.  
 ```
-<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="wiether_sault" data-view="Number" data-title="Current Valuation"  data-prefix="C"></div>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="wiether_sault" data-view="Number" data-title="Weather in Salt Lake City"  data-prefix="C"></div>
     </li>
      <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="wiether_nsk" data-view="Number" data-title="Current Valuation"  data-prefix="C"></div>
+      <div data-id="wiether_nsk" data-view="Number" data-title="Weather in Novosibirsk"  data-prefix="C"></div>
     </li>
 ```
 - **data-id**: `data-id="wiether_sault"` and  `data-id="wiether_nsk"` these are addresses of widgets. On this adreses I going to send information.
 - At the `jobs\sample.rb` I add two evetns that going to send infromation on newly created widgets using it's adresses. `data-id="wiether_sault"` and  `data-id="wiether_nsk"
 ```
-  send_event('wiether_sault',   { value: rand(100) })
-  send_event('wiether_nsk',   { value: rand(100) })
+  send_event('wiether_salt',   { current: current_wiether_salt, last: last_wiether_salt })
+  send_event('wiether_nsk',   { current: current_wiether_nsk, last: last_wiether_nsk})
 ```
