@@ -43,3 +43,11 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - `ifconfig -a` get my local IP.
 -  `http://192.168.1.39:3030/sample` in wondows browser and it's works fine. Iable to see this dashboard at the Linux Virtual machine, from my Windows workstaton.
 **Success the dashboard available**
+
+#### 1.7.1 Running smashing in BACKGROUND (be Able to close the SSH connettion with Linux Virtual Machine)
+- First I need to find what process is listing `0.0.0.0:3030` and I going to use `$ sudo netstat -plunt` and `$ ps -aux | grep {pid_or_name}`
+- PID/Program name is `11337/thin -R confi`
+- and when I'm colsing the ssh conection with Virtual machine it's disapears. I cannot connect to it.
+- `$ smashing start &`to start program and be able to close terminal. And after this call it going to show the PID of process something like this `11912`
+- but it's intersting after `sudo netstat -plunt` I see the name/pid `11929/thin -R confi`. I'll try to `kill 11912` and check what happens. Nothng happes
+- killing via `sudo netstat -plunt` and `kill` PID I found listining `0.0.0.0:3030`
