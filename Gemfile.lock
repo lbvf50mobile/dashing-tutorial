@@ -29,6 +29,7 @@ GEM
     http_parser.rb (0.6.0)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    minitest (5.11.3)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     mustermann (1.0.2)
@@ -95,6 +96,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  minitest
   smashing
   twitter (>= 5.9.0)
 

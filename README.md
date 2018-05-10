@@ -69,3 +69,8 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
   send_event('wiether_salt',   { current: current_wiether_salt, last: last_wiether_salt })
   send_event('wiether_nsk',   { current: current_wiether_nsk, last: last_wiether_nsk})
 ```
+### 2.1 Create class to use if fot getting data from 3rd party server.
+
+#### 2.2 Using minitest.
+- First add minitest to a gemfile.
+- And start `$ bundle` now we have a `minitest` installed and able to create classes that going to be used by **Smashing**
