@@ -74,3 +74,13 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 #### 2.2 Using minitest.
 - First add minitest to a gemfile.
 - And start `$ bundle` now we have a `minitest` installed and able to create classes that going to be used by **Smashing**
+
+#### 2.3 Set token variable to store in file and than to be achieve from the script.
+- Create variable `$ VARNAME=15`
+- Read variable `echo $TESTA`
+- Export var to envirotnmen `$ export TESTA`
+- Read variable from ruby script: `$ ruyb -e "p ENV['TESTA']`
+- Create file for tocken `$ touch tmp`, save data tocken data in the `tmp` file, `$ echo "MyTocken" > tmp`
+- Save token valule from file to a `TESTA` variable. `$ TESTA=$(cat 'tmp')` and check `echo $TESTA`
+- Greate. no need to use `export` it's already in environment: `$ ruyb -e "p ENV['TESTA']`
+- Wonderfull now We able to have Tokens in files, and do not include this files in git, by inclusing them into the `.gitignore`.
