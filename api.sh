@@ -1,1 +1,1 @@
-curl -d '{ "auth_token": "222", 'current': 100, 'last': 50 }' http://localhost:3030/widgets/api
+curl -d '{ "auth_token": "LETTESTALONGLONGTOKEN", "current": "100", "last": "50" }' http://localhost:3030/widgets/api
