@@ -89,3 +89,7 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - Save token valule from file to a `TESTA` variable. `$ TESTA=$(cat 'tmp')` and check `echo $TESTA`
 - Greate. no need to use `export` it's already in environment: `$ ruby -e "p ENV['TESTA']`
 - Wonderfull now We able to have Tokens in files, and do not include this files in git, by inclusing them into the `.gitignore`.
+
+#### 2.4 Now write class that going to send Request to a Weather server
+- first I create the file `$ touch WEATHER_TOKEN` this file will not be in git ignore to avoid saving tokins in github.
+- I create the file that going to save put `WEATHER_TOKEN` into the env `WEATHER_TOKEN`, and this file is `weather.sh`
