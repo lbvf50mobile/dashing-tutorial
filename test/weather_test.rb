@@ -14,9 +14,11 @@ describe DashApp::Weather do
         assert ENV['WEATHER_TOKEN']
         assert_nil ENV['SOMETHING_THAT_DOSE_NOT_EXSITS_HERE_2388_YES']
     end
-    it "Should have a responce" do
+    it "Should have a responce and it must be 200" do
         @w.update
-        p @w.response
+        # https://ruby-doc.org/stdlib-2.1.1/libdoc/net/http/rdoc/Net/HTTP.html
         assert @w.response
+        assert_equal "200", @w.response.code
     end
+    
 end
