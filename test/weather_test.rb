@@ -2,7 +2,8 @@ require "./test/test_helper.rb"
 
 describe DashApp::Weather do
     before do
-        @w = DashApp::Weather.new
+        location = "location"
+        @w = DashApp::Weather.new(location)
     end
     it "must return digit" do
         @w.update
