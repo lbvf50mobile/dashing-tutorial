@@ -107,3 +107,11 @@ When in Linux it's better to use [rbenv-var](https://github.com/rbenv/rbenv-vars
 - `$ echo "WEATHER_TOKEN="$(cat 'WEATHER_TOKEN') > .rbenv-vars` feels great.
 - `$ ruby test/weather_test.rb` works fine. but `$ printenv WATHER_TOKEN` is empty. Great and Neat.
 - Now start the the `$ smashing start` work.
+
+### 3 Using API
+- I created new `data-view="Number"` widget with `data-id="api"` at the `dashboard/sample.rb`.
+```
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="api" data-view="Number" data-title="Send data Using API"  ></div>
+</li>
+```
