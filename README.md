@@ -93,3 +93,5 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 #### 2.4 Now write class that going to send Request to a Weather server
 - first I create the file `$ touch WEATHER_TOKEN` this file will not be in git ignore to avoid saving tokins in github.
 - I create the file that going to save put `WEATHER_TOKEN` into the env `WEATHER_TOKEN`, and this file is `weather.sh`
+- Now to push tocket into ENV need to fire `$ ./weather.sh` 
+- **!!! IMPORTANT** after run `.wather.sh` all things works in context of bach file, but dose not work in laiter called ruby file. Need to insert manually content of `$ ./weather.sh` and after manual insert it's works.
