@@ -1,7 +1,8 @@
 salt = DashApp::Weather.new("Salt Lake City")
 nsk = DashApp::Weather.new("Novosibirsk")
 
-
+salt.update
+nsk.update
 current_wiether_salt = salt.temperature
 current_wiether_nsk = nsk.temperature
 
