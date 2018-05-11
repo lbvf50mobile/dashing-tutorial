@@ -1,2 +1,2 @@
 require "minitest/autorun"
-p "fire"
+require "./lib/weather.rb"
