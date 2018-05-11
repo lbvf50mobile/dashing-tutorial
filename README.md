@@ -74,6 +74,10 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 #### 2.2 Using minitest.
 - First add minitest to a gemfile.
 - And start `$ bundle` now we have a `minitest` installed and able to create classes that going to be used by **Smashing**
+- Create folder for test and file: `$ mkdir test`, `$ touch test/test_helper.rb` 
+- Create file `test/wether_test.rb` in this file I going to test the class for delivering data to data widget.
+- When file is created it's possbile to fire test with `ruby test/weater_test.rb` and **use all power of TDD, in reach for success in the application**
+
 
 #### 2.3 Set token variable to store in file and than to be achieve from the script.
 - Create variable `$ VARNAME=15`
