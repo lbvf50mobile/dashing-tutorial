@@ -15,6 +15,8 @@ describe DashApp::Weather do
         assert_nil ENV['SOMETHING_THAT_DOSE_NOT_EXSITS_HERE_2388_YES']
     end
     it "Should have a responce" do
+        @w.update
+        p @w.response
         assert @w.response
     end
 end
