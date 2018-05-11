@@ -115,3 +115,11 @@ When in Linux it's better to use [rbenv-var](https://github.com/rbenv/rbenv-vars
       <div data-id="api" data-view="Number" data-title="Send data Using API"  ></div>
 </li>
 ```
+- at the `config.ru` I add token `222`
+```
+  set :auth_token, '222'
+```
+- and prepare `api.sh`, take a look on similarities http://localhost:3030/widgets/**api**  and data-id="**api**", also on set of json vaules.
+```
+curl -d '{ "auth_token": "222", 'current': 100, 'last': 50 }' http://localhost:3030/widgets/api
+```
