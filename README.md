@@ -97,3 +97,13 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - **!!! IMPORTANT** after run `.wather.sh` all things works in context of bach file, but dose not work in laiter called ruby file. Need to insert manually content of `$ ./weather.sh` and after manual insert it's works.
 - [Now I need to know how to delte variable](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps) `$ export -n WEAHTER_TOKEN`.
 - Need to use `source weather.sh`
+
+#### 2.5 Use rbenv-vars to save environment variable.
+When in Linux it's better to use [rbenv-var](https://github.com/rbenv/rbenv-vars)
+
+- I going to check to the Environment variable set `$ printenv WEATHER_TOKEN`
+- Then I going to delete it if it's exists `$ export -n WEATHER_TOKEN' and check again do it exists `$ printenv WEATHER_TOKEN`
+- Next I'll create `.rbenv-vars` file by `$ touch .rbenv-vars` and put data from `WEATHER_TOKEN` file to this new created file `$ cat WEATHER_TOKEN > .rbenv-vars` and add `WEATHER_TOKEN=` prefix.
+- `$ echo "WEATHER_TOKEN="$(cat 'WEATHER_TOKEN') > .rbenv-vars` feels great.
+- `$ ruby test/weather_test.rb` works fine. but `$ printenv WATHER_TOKEN` is empty. Great and Neat.
+- Now start the the `$ smashing start` work.
