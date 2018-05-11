@@ -5,6 +5,9 @@ module DashApp
         end
         def update
         end
+        def response
+            true
+        end
         def temperature
             rand(35)
         end
