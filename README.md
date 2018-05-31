@@ -147,4 +147,8 @@ class Dashing.Num extends Dashing.Widget
         num10 = @get('num') * 10
         "#{num10}"
 ```
+- It's time to create styles for newly create widget: and I going to copy this from the `number` widged, and then change it a little bit.
+- Copy and check: `$ cp widgets/number/number.scss widgets/num/num.scss; [ -f widgets/num/num.scss ] && echo "copy ok" || echo "copy fail"`
+- and add slight change, `number` subsitute with `num`
+
 
