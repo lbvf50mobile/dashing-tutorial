@@ -184,7 +184,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 ![select API's](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/004new.png)
 - click enable API's and Services  
 ![click on Enable Api's and services](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/005new.png)
-- select `Drive`  
-![Select Dirve](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/006.png)
+- select `Drive` and enable it.
+![Select Dirve and Enbale it](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/006.png)
 
 
