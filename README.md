@@ -179,10 +179,12 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - I'll call it `widgetgoogle`  
 ![I call this project widgetgoogle](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/002new.png)
 - Then click on this project name `widgetgoogle`  
-![I call this project widgetgoogle](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/003new.png)
+![click on project name](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/003new.png)
 - Then click on big google API's when this project is selected.  
-![I call this project widgetgoogle](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/004new.png)
+![select API's](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/004new.png)
 - click enable API's and Services  
-![I call this project widgetgoogle](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/005new.png)
+![click on Enable Api's and services](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/005new.png)
+- select `Drive`  
+![Select Dirve](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/006.png)
 
 
