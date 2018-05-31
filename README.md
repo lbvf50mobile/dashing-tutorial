@@ -170,7 +170,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - **IT works!**
 
 ### 5 Read data from Google Sheets
-- Docs here [https://gist.github.com/lbvf50mobile/8a6115152e71fe2b8886cc6bf92b5b52](gist), [https://youtu.be/vISRn5qFrkM](youtube)
+- Docs here [gist](https://gist.github.com/lbvf50mobile/8a6115152e71fe2b8886cc6bf92b5b52]), [youtube](https://youtu.be/vISRn5qFrkM)
 
 
 
