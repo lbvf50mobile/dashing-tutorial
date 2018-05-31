@@ -191,5 +191,11 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 
 #### 5.2 Create Widget.
 - create Directory for a new widget. I'll do it using `google_widget.sh` just because it faster.
+- Add data to the `dashboards/sample.erb`
+```
+<li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+  <div data-id="google_spreadsheet" data-view="GoogleSpreadsheet" data-title="Google Spreadsheet Cells Value"></div>
+</li>
+```
 
 
