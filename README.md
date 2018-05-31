@@ -174,6 +174,8 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - My First step is to add dependencies into the `Gemfile`: `gem 'google-api-client'`, `gem 'google_drive'`  
 `$ echo "gem 'google_drive'" >> Gemfile; echo "gem 'google-api-client'" >> Gemfile; bundle`   
 **THIS TOOK 5-10 minutes. `google-api-client` took some time**
+
+#### 5.1 Create Keys. 
 - go to [google console](https://code.google.com/apis/console) and click `Create Project`  
 ![Create Project](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/001.png)
 - I'll call it `widgetgoogle`  
@@ -186,5 +188,8 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 ![click on Enable Api's and services](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/005new.png)
 - select `Drive` and enable it.
 ![Select Dirve and Enbale it](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/006.png)
+
+#### 5.2 Create Widget.
+- create Directory for a new widget. I'll do it using `google_widget.sh` just because it faster.
 
 
