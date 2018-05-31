@@ -150,5 +150,16 @@ class Dashing.Num extends Dashing.Widget
 - It's time to create styles for newly create widget: and I going to copy this from the `number` widged, and then change it a little bit.
 - Copy and check: `$ cp widgets/number/number.scss widgets/num/num.scss; [ -f widgets/num/num.scss ] && echo "copy ok" || echo "copy fail"`
 - and add slight change, `number` subsitute with `num`
+- Inserting newly created widget into the dashboard: I going to open the `dashboards/sample.erb` and add new `li` element there; with `data-id="n" data-view="Num" data-title="new Widget"`
+`data-id="n"`
+`data-view="Num"`
+`data-title="new Widget"`
+- new `li` added to the `dashboards/sample.erb`
+```
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="n" data-view="Num" data-title="new Widget"></div>
+</li>
+```
+
 
 
