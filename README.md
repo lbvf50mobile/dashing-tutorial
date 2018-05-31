@@ -138,4 +138,13 @@ title: <b data-bind="title"></b><br/>
 num: <b data-bind="num"></b><br/>
 num10: <b data-bind="num10"></b><br/>
 ```
+- It's time for coffie script: `$ touch widgets/num/num.coffee; [ -f widgets/num/num.coffee ] && echo "c ok" || echo "c fail"`
+- When file is created, I going add programm code to it.
+```
+class Dashing.Num extends Dashing.Widget
+    @accessor 'num', Dashing.AnimatedValue
+    @accessor 'num10', ->
+        num10 = @get('num') * 10
+        "#{num10}"
+```
 
