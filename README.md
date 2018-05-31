@@ -125,3 +125,17 @@ curl -d '{ "auth_token": "LETTESTALONGLONGTOKEN", "current": "100", "last": "50"
 ```
 - Upload data to the liniux, fire `source api.sh` and data transfered to the widget.
 
+### 4 Creating my new Widget.
+
+- Now I know what to do in term of Coffie Script, and main thing I need to find path how to `complie`.
+- I going to create widget called `num` to show just one number. It going to have 2 elements `title` and `num` where I going to place number.
+- I create new `num` dir for the new widget: `$ mkdir widgets/num; [ -d widgets/num ] && echo "The dir is created" || echo "The dir is not created"`
+- Next I'll create `num.html` file: `$ touch widgets/num/num.html; [ -f widgets/num/num.html ] && echo "file ok" || echo "file fail"`
+- In this file I going to have only 3 things: `title`, `num` and `num10` the multiplication num*10 to test some scripts action.
+- So here I created simple `widgets/num/num.html` contet, three lines with `b` tag and `data-bind` attribute for each field:
+```
+title: <b data-bind="title"></b><br/>
+num: <b data-bind="num"></b><br/>
+num10: <b data-bind="num10"></b><br/>
+```
+
