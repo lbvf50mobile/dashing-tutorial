@@ -223,4 +223,5 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - `$ rbenv install 2.3.1`
 - `$ scp -p PORT -i ~/.ssh/rpi wg.json pi@IP:~/dashing-tutorial/wg.json` **not work, impemented by VI, and .rbenv-vars too**
 - `$ gem install bundler`
+- `sudo gem install bundler`
 
