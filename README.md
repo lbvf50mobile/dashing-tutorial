@@ -219,3 +219,4 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - `sudo systemctl restart ssh`
 - now connection to rpi works like this `ssh -p PORT -i ~/.ssh/rpi pi@IP`
 - create script to install rbenv this script will be at the `sh/06rbenv.sh`
+- no I going to install rbenv vars and it will be by the script `sh/07vars.sh`
