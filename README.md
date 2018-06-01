@@ -200,3 +200,11 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 ```
 
 
+#### 6 OpenSSh
+- `sudo systemctl status ssh`
+- `sudo cat /etc/ssh/sshd_config`
+- `[ -f /etc/ssh/sshd_config ] && echo "yes this is file" || echo "no problem"`
+- `git clone https://github.com/lbvf50mobile/dashing-tutorial.git`
+- `cd dashing-tutorial`
+- `source sh/01check`
+
