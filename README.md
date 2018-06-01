@@ -220,3 +220,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - now connection to rpi works like this `ssh -p PORT -i ~/.ssh/rpi pi@IP`
 - create script to install rbenv this script will be at the `sh/06rbenv.sh`
 - no I going to install rbenv vars and it will be by the script `sh/07vars.sh`
+- `$ rbenv install 2.3.1`
+- `$ scp -p PORT -i ~/.ssh/rpi wg.json pi@IP:~/dashing-tutorial/wg.json` **not work, impemented by VI, and .rbenv-vars too**
+- `$ gem install bundler`
+
