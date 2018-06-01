@@ -1,0 +1,4 @@
+echo "1) Check where do the config file:"
+[ -f /etc/ssh/sshd_config ] && echo "1 - OK " || "1 - Fails"
+echo "2) Check Ubuntu version"
+lsb_release -a 
