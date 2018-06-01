@@ -214,4 +214,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - I add scrit `sh/05restoressh.sh` to restore `/etc/ssh/sshd_config` in case of acceidend.
 - `sudo systemctl status ssh`
 - `sudo systemctl restart ssh`
-- Just created new key called rpi
+- Just created new key called rpi, and again
+- `sudo systemctl status ssh`
+- `sudo systemctl restart ssh`
+- now connection to rpi works like this `ssh -p PORT -i ~/.ssh/rpi pi@IP`
