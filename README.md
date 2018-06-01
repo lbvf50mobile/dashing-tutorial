@@ -208,3 +208,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - `cd dashing-tutorial`
 - `source sh/01check`
 
+#### 7 Working on RPI
+- First I need to make copy of `.bashrc`, and I going to check correct name `ls -alF | grep bash`, `cat .bashrc`, from `~` fire `source dashing-tutorial/sh/03bashrc.sh`
+- Now I need to create ssh using keys.  adding 3 new lines to the `/etc/ssh/sshd_config`, I add this data there `source dashing-tutorial/sh/04chssh.sh` again run from  the `~`  
+
