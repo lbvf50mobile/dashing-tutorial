@@ -1,5 +1,5 @@
 # copy bash.rc
-CONF='~/.bashrc'
+CONF='.bashrc'
 BACK=$CONF.fd20180601
 echo "1) Create backup of the $CONF"
 sudo cp $CONF $BACK
