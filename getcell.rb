@@ -4,4 +4,5 @@ require "google_drive"
 @spreadsheet ||= @session.spreadsheet_by_title("wg001")
 @worksheet ||= @spreadsheet.worksheets.first
 p @worksheet
+p @worksheet[1,1]
 
