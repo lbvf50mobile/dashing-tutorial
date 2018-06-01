@@ -188,6 +188,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 ![click on Enable Api's and services](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/005new.png)
 - select `Drive` and enable it.
 ![Select Dirve and Enbale it](https://raw.githubusercontent.com/lbvf50mobile/dashing-tutorial/master/img/006.png)
+- copy widget here wg.json
 
 #### 5.2 Create Widget.
 - create Directory for a new widget. I'll do it using `google_widget.sh` just because it faster.
