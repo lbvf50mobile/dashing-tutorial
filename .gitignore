@@ -3,3 +3,4 @@ history.yml
 Gemfile.lock
 WEATHER_TOKEN
 .rbenv-vars
+wg.json
