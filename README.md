@@ -170,7 +170,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - **IT works!**
 
 ### 5 Read data from Google Sheets
-- Docs here [gist](https://gist.github.com/lbvf50mobile/8a6115152e71fe2b8886cc6bf92b5b52), [youtube](https://youtu.be/vISRn5qFrkM)
+- Docs here [gist](https://gist.github.com/lbvf50mobile/8a6115152e71fe2b8886cc6bf92b5b52), [youtube PY](https://youtu.be/vISRn5qFrkM), [youtube Ruby](https://youtu.be/TU1znISrAGg "Ruby")
 - My First step is to add dependencies into the `Gemfile`: `gem 'google-api-client'`, `gem 'google_drive'`  
 `$ echo "gem 'google_drive'" >> Gemfile; echo "gem 'google-api-client'" >> Gemfile; bundle`   
 **THIS TOOK 5-10 minutes. `google-api-client` took some time**
