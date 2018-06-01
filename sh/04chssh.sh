@@ -3,8 +3,10 @@ CONF="/etc/ssh/sshd_config"
 KEY=".ssh/rpi.pub"
 sudo chmod a+w /etc/ssh/sshd_config; ls -alF /etc/ssh/sshd_config
 
-sudo echo "RSAAuthentication yes" >> $CONF
+# sudo echo "RSAAuthentication yes" >> $CONF
 sudo echo "PubkeyAuthentication yes" >> $CONF
+sudo echo "MaxAuthTries 150" >> $CONF
+sudo echo "MaxSessions 150" >> $CONF
 sudo echo "PermitEmptyPasswords no" >> $CONF
 sudo echo "PasswordAuthentication no" >> $CONF
 sudo echo "AuthorizedKeysFile      %h/.ssh/authorized_keys" >> $CONF
