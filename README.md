@@ -1,13 +1,17 @@
 ## [Dasing](http://dashing.io/)/[Smashing](https://smashing.github.io/) tutorial.
 
-# Table of Contents
-1. [Smashing Install](1-smashing-install)
-2. [Widgets dirven by JOB]( Creating 2 Widgets updated with JOB.)
-3. [Third Example](#third-example)
-
 The purpose of this tutorial to show queue of steps for creating simple dasboard. This dashboard should have 2 wiether widgets with Temperature, the data should be requered via `JOB` but HTTP request. And 1 widget that get information using `API` call. I'm using `Windows 8` and `Ruby 2.3.3.`.
 
-## 1 Smashing Install
+## Table of context
+* [Installation](#installation)
+* [JOBS](#jobs)
+* [API](#api)
+* [Crete new Widget](#new-widget)
+* [Google Sheets](#google-sheets)
+* [OpenSSh](#openssh)
+* [PRI](#rpi)
+
+## Installation
 
 Take a look for a little bit I made decision to use [Smashing](https://smashing.github.io) because it's looks exactly the same in documentation. But the code is newer.
 
@@ -58,7 +62,7 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - but it's intersting after `sudo netstat -plunt` I see the name/pid `11929/thin -R confi`. I'll try to `kill 11912` and check what happens. Nothng happes
 - killing via `sudo netstat -plunt` and `kill` PID I found listining `0.0.0.0:3030`
 
-## 2.JOBS and widgets.
+## Jobs
 - At `/dashboards/sample.rb` I create two widjets with `data-view="Number"` and two different **data-id**: `data-id="wiether_salt"` and  `data-id="wiether_nsk"`.
 - `data-view="Number"` - it's a type of widget.  
 ```
@@ -114,7 +118,7 @@ When in Linux it's better to use [rbenv-var](https://github.com/rbenv/rbenv-vars
 - `$ ruby test/weather_test.rb` works fine. but `$ printenv WATHER_TOKEN` is empty. Great and Neat.
 - Now start the the `$ smashing start` work.
 
-### 3 Using API
+## Api
 - I created new `data-view="Number"` widget with `data-id="api"` at the `dashboard/sample.rb`.
 ```
 <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
@@ -131,7 +135,7 @@ curl -d '{ "auth_token": "LETTESTALONGLONGTOKEN", "current": "100", "last": "50"
 ```
 - Upload data to the liniux, fire `source api.sh` and data transfered to the widget.
 
-### 4 Creating my new Widget.
+## New widget
 
 - Now I know what to do in term of Coffie Script, and main thing I need to find path how to `complie`.
 - I going to create widget called `num` to show just one number. It going to have 2 elements `title` and `num` where I going to place number.
@@ -175,7 +179,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - and in new terminal window fire `source api.sh`
 - **IT works!**
 
-### 5 Read data from Google Sheets
+## Google Sheets
 - Docs here [gist](https://gist.github.com/lbvf50mobile/8a6115152e71fe2b8886cc6bf92b5b52), [youtube PY](https://youtu.be/vISRn5qFrkM), [youtube Ruby](https://youtu.be/TU1znISrAGg "Ruby")
 - My First step is to add dependencies into the `Gemfile`: `gem 'google-api-client'`, `gem 'google_drive'`  
 `$ echo "gem 'google_drive'" >> Gemfile; echo "gem 'google-api-client'" >> Gemfile; bundle`   
@@ -206,7 +210,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 ```
 
 
-#### 6 OpenSSh
+## OpenSSh
 - `sudo systemctl status ssh`
 - `sudo cat /etc/ssh/sshd_config`
 - `[ -f /etc/ssh/sshd_config ] && echo "yes this is file" || echo "no problem"`
@@ -214,7 +218,7 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - `cd dashing-tutorial`
 - `source sh/01check`
 
-#### 7 Working on RPI
+## Rpi
 - First I need to make copy of `.bashrc`, and I going to check correct name `ls -alF | grep bash`, `cat .bashrc`, from `~` fire `source dashing-tutorial/sh/03bashrc.sh`
 - Now I need to create ssh using keys.  adding 3 new lines to the `/etc/ssh/sshd_config`, I add this data there `source dashing-tutorial/sh/04chssh.sh` again run from  the `~`  
 - I add scrit `sh/05restoressh.sh` to restore `/etc/ssh/sshd_config` in case of acceidend.
