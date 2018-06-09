@@ -1,8 +1,14 @@
 ## [Dasing](http://dashing.io/)/[Smashing](https://smashing.github.io/) tutorial.
 
+# Table of Contents
+1. [Smashing Install](1-smashing-install)
+2. [Widgets dirven by JOB]( Creating 2 Widgets updated with JOB.)
+3. [Third Example](#third-example)
+
 The purpose of this tutorial to show queue of steps for creating simple dasboard. This dashboard should have 2 wiether widgets with Temperature, the data should be requered via `JOB` but HTTP request. And 1 widget that get information using `API` call. I'm using `Windows 8` and `Ruby 2.3.3.`.
 
-### 1. Install Smashing.  
+## 1 Smashing Install
+
 Take a look for a little bit I made decision to use [Smashing](https://smashing.github.io) because it's looks exactly the same in documentation. But the code is newer.
 
 - `$ gem install smashing`  
@@ -52,7 +58,7 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - but it's intersting after `sudo netstat -plunt` I see the name/pid `11929/thin -R confi`. I'll try to `kill 11912` and check what happens. Nothng happes
 - killing via `sudo netstat -plunt` and `kill` PID I found listining `0.0.0.0:3030`
 
-## Creating 2 Widgets updated with JOB.
+## 2.JOBS and widgets.
 - At `/dashboards/sample.rb` I create two widjets with `data-view="Number"` and two different **data-id**: `data-id="wiether_salt"` and  `data-id="wiether_nsk"`.
 - `data-view="Number"` - it's a type of widget.  
 ```
