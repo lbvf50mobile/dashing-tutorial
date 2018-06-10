@@ -10,6 +10,7 @@ The purpose of this tutorial to show queue of steps for creating simple dasboard
 * [Google Sheets](#google-sheets)
 * [OpenSSh](#openssh)
 * [PRI](#rpi)
+* [Digital Ocean droplet](#digitalocean-droplet)
 
 ## Installation
 
@@ -235,4 +236,19 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - `$ gem install bundler`
 - `sudo gem install bundler`
 - **Issue**: run server `smasing start &` on RPI, close terminal, and `sudo netstat -plunt` dose not reflect this server. server stops.
+
+## Digitalocean droplet
+
+Installing Smashing on digital ocean droplet. 
+
+### Create new SSH keypair.
+And my first step is to create fast logging to the droplet without passprase so I be able by one keypress `d` log into this system. It's requires several steps.
+- Logging using already existes keys. 
+  - `$ ssh -i ~/.ssh/keys root@xxx.xxx.xxx.xx`
+  - `$ tails -10 ~/.bashrc`
+  - `$ echo 'alias d="ssh -i ~/.ssh/keys root@xxx.xxx.xxx.xx"' >> ~/.bashrc`
+- Create scripts and aliases for backup/resotre `authorised_keys`
+- Generate new SSH keys pari without passfrase. and put it into the `autorised_keys`
+- Test
+- Create alias in my local machine on `d` key.
 
