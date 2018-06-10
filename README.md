@@ -247,8 +247,16 @@ And my first step is to create fast logging to the droplet without passprase so 
   - `$ ssh -i ~/.ssh/keys root@xxx.xxx.xxx.xx`
   - `$ tails -10 ~/.bashrc`
   - `$ echo 'alias d="ssh -i ~/.ssh/keys root@xxx.xxx.xxx.xx"' >> ~/.bashrc`
-- Create scripts and aliases for backup/resotre `authorised_keys`
+- Check who really commit into the system.
+  - `$ last`
+- Create scripts and aliases for backup/resotre `authorised_keys` **(At curernt moment at the doplet I'm act as a ROOT, ths why # instad of $)**
+  - check for git `# git --version`
+  - test where do I am `# cd ~; pwd` /root
+  - copy smashing for using scripts I write here: `# git clone https://github.com/lbvf50mobile/dashing-tutorial.git`
+  - check the permisions for `authorized_keys` `# ls -alF ~/.ssh/authorized_keys` `-rw-------`
+  - create `sh/08backak.sh`
 - Generate new SSH keys pari without passfrase. and put it into the `autorised_keys`
+  - `$ ssh-keygen -t rsa -C "The comment"`
 - Test
 - Create alias in my local machine on `d` key.
 
