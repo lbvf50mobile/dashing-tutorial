@@ -254,9 +254,16 @@ And my first step is to create fast logging to the droplet without passprase so 
   - test where do I am `# cd ~; pwd` /root
   - copy smashing for using scripts I write here: `# git clone https://github.com/lbvf50mobile/dashing-tutorial.git`
   - check the permisions for `authorized_keys` `# ls -alF ~/.ssh/authorized_keys` `-rw-------`
-  - create `sh/08backak.sh`
+  - generate copy of `authorized_keys` by `# source sh/08backak.sh`
 - Generate new SSH keys pari without passfrase. and put it into the `autorised_keys`
   - `$ ssh-keygen -t rsa -C "The comment"`
-- Test
-- Create alias in my local machine on `d` key.
 
+### Create new user.
+- Change `root` password
+  - generate password with `sh/09pass.rb`
+  - now need to [change password](https://stackoverflow.com/a/19088872/8574922) `# passwd`
+- Now create new user.
+  - check [list of users](https://askubuntu.com/a/410248) `# cat /etc/passwd`
+  - check [list of groups](https://stackoverflow.com/a/14060177/8574922) `# cut -d: -f1 /etc/group`
+  - [create new user](https://askubuntu.com/a/410274) with name `board`
+  
