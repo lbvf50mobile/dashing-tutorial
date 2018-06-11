@@ -265,5 +265,19 @@ And my first step is to create fast logging to the droplet without passprase so 
 - Now create new user.
   - check [list of users](https://askubuntu.com/a/410248) `# cat /etc/passwd`
   - check [list of groups](https://stackoverflow.com/a/14060177/8574922) `# cut -d: -f1 /etc/group`
-  - [create new user](https://askubuntu.com/a/410274) with name `board`
+  - [create new user](https://askubuntu.com/a/410274) by `# adduser board` with name `board`
+- Establish ssh for new user.
+  - my user is not in `ssh` group. 
+  - now I going to create new keypair: `$ ssh-keygen -t rsa -C "The comment"`
+  - and try to [load it](https://www.ssh.com/ssh/copy-id#sec-Setting-up-public-key-authentication) by: `$ ssh-copy-id -i ~/.ssh/mykey user@host`
+  - **IT'S VERY interesting** because at the `cat /etc/ssh/sshd_config` I have a `PasswordAuthentication no`
+  - **DOSE NOT WORK**
+  - now I create `/home/board/.ssh` and there I going to create `authorized_keys` and push key into this directory. I checked in existed system: `.ssh/` == `drwx------`, and `~/.ssh/authorized_keys`==`-rw-------`. Create file `10createsshdir.sh` and fire it with `source 10createsshdir.sh`
+    - `# su board ; cd ~`
+    - `$ git clone https://github.com/lbvf50mobile/dashing-tutorial.git`, `cd dashing-tutorial`, `source sh/10createsshdir.sh`
+    - `$ echo KEY >> ~/.ssh/authorized_keys`, `$ cat ~/.ssh/authorized_keys`
+    - `$ ssh -i ~/.ssh/board  board@xx.xxx.xxx.xxx` **Connected**
   
+  ### Now I need add user `board` in `sudo` group.
+  - now I going to [add user to a sudo group](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart) `# usermod -aG sudo board`
+  - **RELOGIN** `$ su board`
