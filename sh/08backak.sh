@@ -1,5 +1,5 @@
 # copy the autorized_keys array.
-config='~/.ssh/authorized_keys'
+config=~/.ssh/authorized_keys
 copy=$config".fd.1"
 
 [ -f config ] && echo "Exists" || echo "Not Exists"
