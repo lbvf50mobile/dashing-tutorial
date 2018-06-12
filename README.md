@@ -212,7 +212,6 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 
 
 ## OpenSSh
-- `sudo systemctl status ssh`
 - `sudo cat /etc/ssh/sshd_config`
 - `[ -f /etc/ssh/sshd_config ] && echo "yes this is file" || echo "no problem"`
 - `git clone https://github.com/lbvf50mobile/dashing-tutorial.git`
@@ -302,4 +301,9 @@ And my first step is to create fast logging to the droplet without passprase so 
     - `$ tail -2 /etc/ssh/sshd_config ; ls -alF /etc/ssh/sshd_config`
     - `$ sshd/sshd_backup.sh 20180612_2`
     - `$ sshd/sshd_restore.sh 20180612_2 ; tail -1 /etc/ssh/sshd_config` and `$ sshd/sshd_restore.sh 20180612_1 ; tail -1 /etc/ssh/sshd_config`
-    
+    - `$ sshd/sshd_apend.sh "DenyUsers tuser # 20180612 Tuesday"`
+    - `$ sudo systemctl status ssh`
+    - `$ sudo systemctl restart ssh`
+    - `$ tuser` Permission denied (publickey). **success** I denied ssh access for tuser.
+    - Loging by other user and then `su tuser` this works **success**
+
