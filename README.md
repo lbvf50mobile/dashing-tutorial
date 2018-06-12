@@ -289,3 +289,9 @@ And my first step is to create fast logging to the droplet without passprase so 
     - `$ hostname -I`
     - Create a keys for `tuser` and at `tuser` and move it to the `~/.ssh/authorized_keys`: `$ ssh-keygen -t rsa -C "tuser test user ubuntu"`, `$ scp -i ~/.shh/key tuser.pub  user@host:~/tuser.pub`
     - Test login `$ ssh -i ~/.ssh/tuser tuser@host`. **Success**
+  - When I have a new user I able to test the way of deni ssh connect for username.
+    - first I create `tuser` alias to be able fast in testing how do I turn of the SSH login. `alias tuser="ssh -i ~/.ssh/tuser tuser@xxx.xxx.xxx.xxx"`
+    - now time to [disable root](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys) `/etc/ssh/sshd_config` `PermitRootLogin no`
+    - but for testing purpose I going to use [DenyUsers](https://man.openbsd.org/sshd_config.5#DenyUsers)
+    - the permitions `-rw-r--r-- 1 root root 2539 Jun 22  2016 /etc/ssh/sshd_config`
+    - now I need scrpts for backup/restore
