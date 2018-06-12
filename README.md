@@ -306,4 +306,36 @@ And my first step is to create fast logging to the droplet without passprase so 
     - `$ sudo systemctl restart ssh`
     - `$ tuser` Permission denied (publickey). **success** I denied ssh access for tuser.
     - Loging by other user and then `su tuser` this works **success**
+  - **Implementing this task on the Droplet**
+    - upload the `sshd` dir, read the `/etc/ssh/sshd_config`
+      - `chmod u+x sshd/sshd*`
+      - `ls -alF sshd`
+    - backup current config
+      - `sshd/sshd_backup.sh 20180612_1`
+    - add `PermitRootLogin no # 20180612 June Tuesday`
+      - `sshd/sshd_apend.sh "PermitRootLogin no # 20180612 June Tuesday"`
+      - **issue** `UsePAM yesPermitRootLogin no # 20180612 June Tuesday`
+      - `vi /etc/ssh/sshd_config` 
+      - `sshd/sshd_backup.sh 20180613noroot`
+      - `ll /etc/ssh/ | grep bk`
+    - resart
+      - `$ sudo systemctl status ssh`
+      - `$ sudo systemctl restart ssh`
+      - **I still log in as root**
+      - `sshd/sshd_backup.sh 20180613noroot1`
+      - `sshd/sshd_apend.sh "DenyUsers root # 20180613 Wendesday"`
+      - `sshd/sshd_backup.sh 20180613_denyuserroot`
+      - `$ sudo systemctl status ssh`
+      - `$ sudo systemctl restart ssh`
+    - test
+      - **only after DenyUsers root it starts works**
+      - found why there was `PermitRootLogin yes` found by `grep Root  /etc/ssh/sshd_config`
+      - `ll /etc/ssh/ | grep bk`
+      - `sshd/sshd_restore.sh 20180612_1`
+      -  Change `PermitRootLogin yes` on `PermitRootLoging no`
+      - `sshd/sshd_backup.sh 20180613norootcorrect`
+      - `$ sudo systemctl status ssh`
+      - `$ sudo systemctl restart ssh`
+      - **DONE** all things works correctly.
+
 
