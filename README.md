@@ -294,4 +294,5 @@ And my first step is to create fast logging to the droplet without passprase so 
     - now time to [disable root](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys) `/etc/ssh/sshd_config` `PermitRootLogin no`
     - but for testing purpose I going to use [DenyUsers](https://man.openbsd.org/sshd_config.5#DenyUsers)
     - the permitions `-rw-r--r-- 1 root root 2539 Jun 22  2016 /etc/ssh/sshd_config`
-    - now I need scrpts for backup/restore
+    - now I need scripts for backup/restore, I created `sshd` directory with two files `sshd/sshd_backup.sh`, `sshd/sshd_restore.sh`.
+    - And now test, `git pull`, set exectue permition, `sshd/sshd_backup.sh 20180612_1`, `sudo echo "# TEST line 2018012_2" >> /etc/ssh/sshd_config`, `sshd/sshd_backup 20180612_2`, then `sshd/sshd_resore 20180612_2` and check how do it works.
