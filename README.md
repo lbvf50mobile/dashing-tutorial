@@ -281,3 +281,11 @@ And my first step is to create fast logging to the droplet without passprase so 
   ### Now I need add user `board` in `sudo` group.
   - now I going to [add user to a sudo group](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart) `# usermod -aG sudo board`
   - **RELOGIN** `$ su board`
+
+  ### Disable `root` loging at the Droplet
+  - Test working on virtual machine to prevent the failure that leads to lose of connect with server.
+    - At virtual machine crate new user `tuser` passwordd `tuser1`: `$ sudo adduser tuser`, `$ su tuser`, `$ cd ~`
+    - clone the `$ git clone https://github.com/lbvf50mobile/dashing-tutorial.git` to get set of scripts. and run changed  `10createsshdir.sh`
+    - `$ hostname -I`
+    - Create a keys for `tuser` and at `tuser` and move it to the `~/.ssh/authorized_keys`: `$ ssh-keygen -t rsa -C "tuser test user ubuntu"`, `$ scp -i ~/.shh/key tuser.pub  user@host:~/tuser.pub`
+    - Test login `$ ssh -i ~/.ssh/tuser tuser@host`. **Success**
