@@ -296,3 +296,10 @@ And my first step is to create fast logging to the droplet without passprase so 
     - the permitions `-rw-r--r-- 1 root root 2539 Jun 22  2016 /etc/ssh/sshd_config`
     - now I need scripts for backup/restore, I created `sshd` directory with two files `sshd/sshd_backup.sh`, `sshd/sshd_restore.sh`.
     - And now test, `git pull`, set exectue permition, `sshd/sshd_backup.sh 20180612_1`, `sudo echo "# TEST line 2018012_2" >> /etc/ssh/sshd_config`, `sshd/sshd_backup 20180612_2`, then `sshd/sshd_resore 20180612_2` and check how do it works.
+    - `$ chmod u+x sshd/sshd* ; ls -alF sshd`
+    - `$ sudo chmod o+w /etc/ssh/sshd_config`
+    - `$ sudo chmod o-w /etc/ssh/sshd_config`
+    - `$ tail -2 /etc/ssh/sshd_config ; ls -alF /etc/ssh/sshd_config`
+    - `$ sshd/sshd_backup.sh 20180612_2`
+    - `$ sshd/sshd_restore.sh 20180612_2 ; tail -1 /etc/ssh/sshd_config` and `$ sshd/sshd_restore.sh 20180612_1 ; tail -1 /etc/ssh/sshd_config`
+    
