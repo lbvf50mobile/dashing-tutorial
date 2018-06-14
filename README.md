@@ -338,4 +338,7 @@ And my first step is to create fast logging to the droplet without passprase so 
       - `$ sudo systemctl restart ssh`
       - **DONE** all things works correctly.
 
+      ### Check do I able loging as root
+      - Check `$ su root` **SUCCESS**
+
 
