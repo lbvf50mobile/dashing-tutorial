@@ -392,6 +392,8 @@ Errno::EEXIST: File exists @ dir_s_mkdir - tmp
   ```
   - vi /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb
   - delete the `tmp` file from the repo
+  - `$ smashing start -d` [instruction](https://github.com/Smashing/smashing/wiki/How-To:-Run-on-a-different-port,-or-in-production)
+  - **Success**
   
 
 
