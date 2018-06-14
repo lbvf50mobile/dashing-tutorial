@@ -11,6 +11,9 @@ The purpose of this tutorial to show queue of steps for creating simple dasboard
 * [OpenSSh](#openssh)
 * [PRI](#rpi)
 * [Digital Ocean droplet](#digitalocean-droplet)
+* [Rbenv ruby-build rbenv-env install](#droplet-install-rbenv)
+* [Smashing needs nodejs instaleld](#smashing-needs-nodejs-instaleld)
+* [Start smashing as daemon](#start-smashing-as-daemon)
 
 ## Installation
 
@@ -340,5 +343,57 @@ And my first step is to create fast logging to the droplet without passprase so 
 
       ### Check do I able loging as root
       - Check `$ su root` **SUCCESS**
+
+## Droplet install rbenv
+  - `$ sh/11rbenv_build_vars.sh`
+  - `$ rbenv install -l` # list all avaialable versions.
+  - `$ rbenv install 2.3.7` # install a Ruby version
+    - **error** configure: error: no acceptable C compiler found in $PATH
+    - [Here I may to install](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-16-04) `build-essential`
+    - Or download `Ruby` for Linux
+    - Going to build: `$ sudo apt-get update`
+    - `$ apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev` (this require 163 mb, I do not whant to spend them)
+    - `$ df -h` I have 23Gb space. 
+    - `$ time rbenv install 2.3.7` done (5m54.021s)
+    - `$ rbenv global 2.3.7` [Choosing ruby version](https://github.com/rbenv/rbenv#choosing-the-ruby-version)
+    - `$ ruby --version`
+    -  **ruby 2.3.7p456 (2018-03-28 revision 63024) [x86_64-linux]** Success
+  - Copy the `.rbenv-vars` with this command `scp -i ~/.ssh/user .rbenv-vars userd@xxx.xxx.xxx.xxx:dashing-tutorial/.rbenv-vars`
+  - Copy the `wg.json` with this command `scp -i ~/.ssh/user wg.json userd@xxx.xxx.xxx.xxx:dashing-tutorial/.wg.json`
+  - `$ gem install bundler`
+  - `$ bundle`
+  - `smashing start` dose not works because of differnce in global and local instalation [local with global](https://stackoverflow.com/questions/17047008/rails-gem-install-vs-gemfile-bundle-install)
+## Smashing needs nodejs instaleld
+  - `$ bundle show smashing`, `$ gem environmant`
+  - `bundler: failed to load command: thin (/home/board/.rbenv/versions/2.3.7/bin/thin)` **Error** [solution](https://github.com/home-assistant/hadashboard/issues/38)
+  - `$ gem install thin`
+  - `$ sudo apt-get install -y nodejs` 
+## Start smashing as daemon
+  - `$ smashing start -d` [instruction](https://github.com/Smashing/smashing/wiki/How-To:-Run-on-a-different-port,-or-in-production)
+  - **error** bundler: failed to load command: thin (/home/board/.rbenv/versions/2.3.7/bin/thin)
+  ```
+  board@smashing:~/dashing-tutorial$ smashing start -d
+bundler: failed to load command: thin (/home/board/.rbenv/versions/2.3.7/bin/thin)
+Errno::EEXIST: File exists @ dir_s_mkdir - tmp
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb:254:in `mkdir'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb:254:in `fu_mkdir'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb:228:in `block (2 levels) in mkdir_p'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb:226:in `reverse_each'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb:226:in `block in mkdir_p'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb:211:in `each'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb:211:in `mkdir_p'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/thin-1.7.2/lib/thin/daemonizing.rb:49:in `daemonize'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/thin-1.7.2/lib/thin/controllers/controller.rb:62:in `start'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/thin-1.7.2/lib/thin/runner.rb:203:in `run_command'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/thin-1.7.2/lib/thin/runner.rb:159:in `run!'
+  /home/board/.rbenv/versions/2.3.7/lib/ruby/gems/2.3.0/gems/thin-1.7.2/bin/thin:6:in `<top (required)>'
+  /home/board/.rbenv/versions/2.3.7/bin/thin:22:in `load'
+  /home/board/.rbenv/versions/2.3.7/bin/thin:22:in `<top (required)>'
+  ```
+  - vi /home/board/.rbenv/versions/2.3.7/lib/ruby/2.3.0/fileutils.rb
+  - delete the `tmp` file from the repo
+  
+
+
 
 
