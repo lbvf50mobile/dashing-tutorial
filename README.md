@@ -187,7 +187,17 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 ## Several Dashboars on one server
 - `host.com:port/(dashboard_name)` [line from source code](https://github.com/Smashing/smashing/blob/87ee3533653909f4d0a2317ee300ab4ea1ada9e0/lib/dashing/app.rb#L96)
 - [Defaulf dashboard](https://github.com/Smashing/smashing/wiki/How-To%3A-Change-the-default-dashboard) sat at the `config.ru`
+```
+configure do
+  set :auth_token, 'AUTH_TOKEN'
+  set :default_dashboard, 'my_favourite_dashboard' #<==== set default dashboard like this
 
+  helpers do
+
+    def protected!
+      redirect('/auth/g') unless session[:user_id]
+    end
+```
 
 ## Google Sheets
 - Docs here [gist](https://gist.github.com/lbvf50mobile/8a6115152e71fe2b8886cc6bf92b5b52), [youtube PY](https://youtu.be/vISRn5qFrkM), [youtube Ruby](https://youtu.be/TU1znISrAGg "Ruby")
