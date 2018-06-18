@@ -15,7 +15,8 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     done = done.empty? ? 0 : done.to_i
     left = left.empty? ? 0 : left.to_i
     val = (done * 100) / (done + left)
-    send_event(name,   { value: 0 })
+    val |= 1
+    send_event(name,   { value: name })
     
   }
    
