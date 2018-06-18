@@ -14,7 +14,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     done = @worksheet[row+y_offset,2]
     done = done.empty? ? 0 : done.to_i
     left = left.empty? ? 0 : left.to_i
-    send_event('synergy',   { value: done, max:(left+done) })
+    send_event(name,   { value: done, max: (done+left) })
     
   }
    
