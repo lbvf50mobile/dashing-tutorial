@@ -14,7 +14,7 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     done = @worksheet[row+y_offset,2]
     done = done.empty? ? 0 : done.to_i
     left = left.empty? ? 0 : left.to_i
-    val = (done * 100) / left
+    val = ((done-left) * 100) / done
     val |= 1
     send_event(name,   { value: val })
     
