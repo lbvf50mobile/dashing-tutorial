@@ -7,6 +7,7 @@ The purpose of this tutorial to show queue of steps for creating simple dasboard
 * [JOBS](#jobs)
 * [API](#api)
 * [Crete new Widget](#new-widget)
+* [Several Dashboars on one server](#several-dashboars-on-one-server)
 * [Google Sheets](#google-sheets)
 * [OpenSSh](#openssh)
 * [PRI](#rpi)
@@ -182,6 +183,11 @@ The `data-id="n"` stored into the `http://localhost:3030/widgets/n`
 - and Test time, I fire the server with `smashing start` 
 - and in new terminal window fire `source api.sh`
 - **IT works!**
+
+## Several Dashboars on one server
+- `host.com:port/(dashboard_name)` [line from source code](https://github.com/Smashing/smashing/blob/87ee3533653909f4d0a2317ee300ab4ea1ada9e0/lib/dashing/app.rb#L96)
+- [Defaulf dashboard](https://github.com/Smashing/smashing/wiki/How-To%3A-Change-the-default-dashboard) sat at the `config.ru`
+
 
 ## Google Sheets
 - Docs here [gist](https://gist.github.com/lbvf50mobile/8a6115152e71fe2b8886cc6bf92b5b52), [youtube PY](https://youtu.be/vISRn5qFrkM), [youtube Ruby](https://youtu.be/TU1znISrAGg "Ruby")
