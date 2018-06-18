@@ -10,9 +10,11 @@ y_offset=2 # row offset
 
 rows.each_with_index{|name,row|
 left =  @worksheet[row+y_offset,3]
-    done = @worksheet[row+y_offset,2]
-    done = done.empty? ? 0 : done.to_i
-    left = left.empty? ? 0 : left.to_i
-    val = (done * 100) / (done + left)
-    p ((done-left) * 100) / done
+left =  @worksheet[row+y_offset,3]
+done = @worksheet[row+y_offset,2]
+done = done.empty? ? 0 : done.to_i
+left = left.empty? ? 0 : left.to_i
+val = ((done-left) * 100) / done
+val |= 1
+p val
 }
