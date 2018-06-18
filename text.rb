@@ -14,5 +14,5 @@ left =  @worksheet[row+y_offset,3]
     done = done.empty? ? 0 : done.to_i
     left = left.empty? ? 0 : left.to_i
     val = (done * 100) / (done + left)
-    p val
+    p ((done-left) * 100) / done
 }
