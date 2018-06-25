@@ -5,19 +5,9 @@ y_offset=2 # row offset
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
     @session ||= GoogleDrive::Session.from_service_account_key("wg.json")
-    @spreadsheet = @session.spreadsheet_by_title("Tays Dash")
+    @spreadsheet = @session.spreadsheet_by_title("KUHL Dashboards")
     @worksheet = @spreadsheet.worksheets.first
-
-    rows_.each_with_index{|name,row|
-    left =  @worksheet[row+y_offset,3]
-    done = @worksheet[row+y_offset,2]
-    done = done.empty? ? 0 : done.to_i
-    left = left.empty? ? 0 : left.to_i
-    val = ((done-left) * 100) / done
-    val |= 1
-    send_event(name,   { value: val })
-    
-  }
-   
+  
+    send_event('visitors',   { info: @worksheet[3,4], persent: @worksheet[3,5]})
   
 end
