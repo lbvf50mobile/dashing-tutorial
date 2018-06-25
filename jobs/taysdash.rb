@@ -1,4 +1,4 @@
-
+=begin
 require "google_drive"
 
 rows_= %w{water_drank pull_ups squats hip_flexor_stretch push_ups words_written}
@@ -22,3 +22,4 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
    
   
 end
+=end
