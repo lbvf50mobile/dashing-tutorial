@@ -8,6 +8,6 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     @spreadsheet = @session.spreadsheet_by_title("KUHL Dashboards")
     @worksheet = @spreadsheet.worksheets.first
   
-    send_event('visitors',   { info: @worksheet[3,4], persent: @worksheet[3,5]})
+    send_event('visitors',   { info: @worksheet[4,3], persent: @worksheet[5,3]})
   
 end
