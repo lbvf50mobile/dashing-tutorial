@@ -12,6 +12,9 @@ send_event('visitors1',   { info: @worksheet[12,3], persent: @worksheet[13,3]})
 send_event('sales1',   { info: @worksheet[12,5], persent: @worksheet[13,5]})
 send_event('revenue1',   { info: @worksheet[12,7], persent: @worksheet[13,7]})
 
+# Test 'Dos the jobs work when there is no connection?'
+`touch lines`
+
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
     @session ||= GoogleDrive::Session.from_service_account_key("wg.json")
@@ -25,4 +28,10 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     send_event('visitors1',   { info: @worksheet[12,3], persent: @worksheet[13,3]})
     send_event('sales1',   { info: @worksheet[12,5], persent: @worksheet[13,5]})
     send_event('revenue1',   { info: @worksheet[12,7], persent: @worksheet[13,7]})
+
+    # Test 'Does the jobs work hen there is not connection?'
+    val = `tails -1 lines`
+    val = val.to_i
+    val += 1
+    `echo #{val} >> lines`
 end
