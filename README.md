@@ -68,6 +68,7 @@ So getting new verison of my code from Windows, I need just print `$ pl`.
 - killing via `sudo netstat -plunt` and `kill` PID I found listining `0.0.0.0:3030`
 
 ## Jobs
+- **Job implement it's reqests all the time the `Smashing` is working, dose not metter are there any browsers looks at a dashboard**
 - At `/dashboards/sample.rb` I create two widjets with `data-view="Number"` and two different **data-id**: `data-id="wiether_salt"` and  `data-id="wiether_nsk"`.
 - `data-view="Number"` - it's a type of widget.  
 ```
