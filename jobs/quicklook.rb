@@ -14,6 +14,9 @@ send_event('revenue1',   { info: @worksheet[12,7], persent: @worksheet[13,7]})
 
 # Test 'Dos the jobs work when there is no connection?'
 `touch linesNew`
+`echo "Start experement." >> linesNew`
+`echo '0' >> linesNew`
+
 
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
