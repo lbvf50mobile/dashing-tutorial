@@ -13,7 +13,7 @@ send_event('sales1',   { info: @worksheet[12,5], persent: @worksheet[13,5]})
 send_event('revenue1',   { info: @worksheet[12,7], persent: @worksheet[13,7]})
 
 # Test 'Dos the jobs work when there is no connection?'
-`touch lines`
+`touch linesNew`
 
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
@@ -30,8 +30,8 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     send_event('revenue1',   { info: @worksheet[12,7], persent: @worksheet[13,7]})
 
     # Test 'Does the jobs work hen there is not connection?'
-    val = `tails -1 lines`
+    val = `tail -1 linesNew`
     val = val.to_i
     val += 1
-    `echo #{val} >> lines`
+    `echo #{val} >> linesNew`
 end
