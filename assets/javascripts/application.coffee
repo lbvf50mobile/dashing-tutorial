@@ -14,8 +14,8 @@ Dashing.on 'ready', ->
   console.log(window.location.href)
   if(window.location.href.match(/ql$/))
     console.log("QL - background quickbar")
-    Dashing.widget_base_dimensions ||= [300*2, 360*2]
-    Dashing.numColumns ||= 2
+    Dashing.widget_base_dimensions = [300*2, 360*2]
+    Dashing.numColumns = 2
   
 
   contentWidth = (Dashing.widget_base_dimensions[0] + Dashing.widget_margins[0] * 2) * Dashing.numColumns
