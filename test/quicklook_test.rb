@@ -35,11 +35,11 @@ describe DashApp::QuickLook do
     end
     it "should calculta hash correctly" do
         quicklook = DashApp::QuickLook.new(DashApp::WorkSheetDump.new)
-        assert_equal({title: ?V, value: 7, persent: 4}, quicklook.to_hash([3,3]))
+        assert_equal({title: ?V, value: 7, persent: 4, day: 5}, quicklook.to_hash([3,3]))
     end
     it "Must understand Anderstand A-Z columns" do
         quicklook = DashApp::QuickLook.new(DashApp::WorkSheetDump.new)
-        assert_equal({title: ?V, value: 7, persent: 4}, quicklook.to_hash([3,"C"]))
+        assert_equal({title: ?V, value: 7, persent: 4, day: 5}, quicklook.to_hash([3,"C"]))
     end
 
 end

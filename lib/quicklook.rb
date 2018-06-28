@@ -8,7 +8,8 @@ module DashApp
             [
                 {name: :title, offset: [0,0]},
                 {name: :value, offset: [1,0]},
-                {name: :persent, offset: [2,0]}
+                {name: :persent, offset: [2,0]},
+                {name: :day, offset: [3,0]}
             ]
         end
         def to_hash(top_left_ceil)

@@ -13,7 +13,9 @@ module DashApp
             ]
         end
         def [](row,column)
-            raise "[#{row},#{column}] Ceil is out of range." unless @allowed_ceils.include?([row,column])
+            char = ?A.ord-1+column
+            char = char.chr
+            raise "[#{row},#{column}]([#{row},#{char}]) Ceil is out of range." unless @allowed_ceils.include?([row,column])
             @values[[row,column]]
         end
     end
