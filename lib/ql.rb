@@ -10,5 +10,15 @@ module DashApp
                 ]
             end
         end
+        class Product < QuickLook
+            def map
+                [
+                    {name: :title1, offset: [0,0]},
+                    {name: :value1, offset: [1,0]},
+                    {name: :persent1, offset: [2,0]},
+                    {name: :day1, offset: [3,0]}
+                ]
+            end
+        end
     end
 end
