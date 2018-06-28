@@ -47,15 +47,17 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
         .title{
             width: 100%;
             height: 20%;
-            background-color:   #ffff1a;
-            font-size: 25px;
+            // background-color:   #ffff1a;
+            font-size: 40px;
+            font-weight: bolder;
             color: black;
         }
         .value{
             width: 100%;
             height: 20%;
-            background-color:   #ffa64d;
-            font-size: 25px;
+            // background-color:   #ffa64d;
+            font-size: 44px;
+            font-weight: bolder;
             color: black;
         }
        
@@ -63,14 +65,17 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
             width: 100%;
             height: 20%;
             background-color:    #a3a375;
+            font-size: 40px;
+            font-weight: bolder;
             font-size: 25px;
             color: black;
         }
         .day{
           width: 100%;
           height: 20%;
-          background-color:    #a3a375;
-          font-size: 25px;
+          //background-color:    #a3a375;
+          font-size: 44px;
+          font-weight: bolder;
           color: black;
       }
     }
