@@ -4,13 +4,13 @@ require "google_drive"
 @spreadsheet = @session.spreadsheet_by_title("KUHL Dashboards")
 @worksheet = @spreadsheet.worksheets.first
 
-send_event('visitors',   { info: @worksheet[4,3], persent: @worksheet[5,3]})
-send_event('sales',   { info: @worksheet[4,5], persent: @worksheet[5,5]})
-send_event('revenue',   { info: @worksheet[4,7], persent: @worksheet[5,7]})
+send_event('visitors',   { value: @worksheet[4,3], persent: @worksheet[5,3]})
+send_event('sales',   { value: @worksheet[4,5], persent: @worksheet[5,5]})
+send_event('revenue',   { value: @worksheet[4,7], persent: @worksheet[5,7]})
 
-send_event('visitors1',   { info: @worksheet[12,3], persent: @worksheet[13,3]})
-send_event('sales1',   { info: @worksheet[12,5], persent: @worksheet[13,5]})
-send_event('revenue1',   { info: @worksheet[12,7], persent: @worksheet[13,7]})
+send_event('visitors1',   { value: @worksheet[12,3], persent: @worksheet[13,3]})
+send_event('sales1',   { value: @worksheet[12,5], persent: @worksheet[13,5]})
+send_event('revenue1',   { value: @worksheet[12,7], persent: @worksheet[13,7]})
 
 # Test 'Dos the jobs work when there is no connection?'
 `touch linesNew`
@@ -24,13 +24,13 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     @spreadsheet = @session.spreadsheet_by_title("KUHL Dashboards")
     @worksheet = @spreadsheet.worksheets.first
   
-    send_event('visitors',   { info: @worksheet[4,3], persent: @worksheet[5,3]})
-    send_event('sales',   { info: @worksheet[4,5], persent: @worksheet[5,5]})
-    send_event('revenue',   { info: @worksheet[4,7], persent: @worksheet[5,7]})
+    send_event('visitors',   { value: @worksheet[4,3], persent: @worksheet[5,3]})
+    send_event('sales',   { value: @worksheet[4,5], persent: @worksheet[5,5]})
+    send_event('revenue',   { value: @worksheet[4,7], persent: @worksheet[5,7]})
 
-    send_event('visitors1',   { info: @worksheet[12,3], persent: @worksheet[13,3]})
-    send_event('sales1',   { info: @worksheet[12,5], persent: @worksheet[13,5]})
-    send_event('revenue1',   { info: @worksheet[12,7], persent: @worksheet[13,7]})
+    send_event('visitors1',   { value: @worksheet[12,3], persent: @worksheet[13,3]})
+    send_event('sales1',   { value: @worksheet[12,5], persent: @worksheet[13,5]})
+    send_event('revenue1',   { value: @worksheet[12,7], persent: @worksheet[13,7]})
 
     # Test 'Does the jobs work hen there is not connection?'
     val = `tail -1 linesNew`
