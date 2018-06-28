@@ -417,7 +417,7 @@ Errno::EEXIST: File exists @ dir_s_mkdir - tmp
 
   - If add `data-bind` in to a widget html it going to clear all stuff wrote in parent html.
   - Jobs works independent of clients all the time a `Dashing` is working.
-  - Change [size of widget box 'Laying out the widgets'](http://dashing.io/#widgets) at the `assets/javascripts/application.coffee`
+  - Change [size of widget box 'Laying out the widgets'](http://dashing.io/#widgets) at the `assets/javascripts/application.coffee`. Also it's possible to do it at the dashboard `.erb` file, as like as `dashboards/sampletv.erb`.
   - Change [default dashboard](https://github.com/Smashing/smashing/wiki/How-To%3A-Change-the-default-dashboard) at the `config.ru`
   
 
