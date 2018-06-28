@@ -13,3 +13,9 @@ describe DashApp::QL::Product do
         assert_equal({title1: ?P, value1: 5, persent1: 8, day1: 5}, quicklook.to_hash([3,"E"]))
     end
 end
+describe DashApp::QL::Revenue do
+    it "Must understand Anderstand A-Z columns" do
+        quicklook = DashApp::QL::Revenue.new(DashApp::QL::RevenueDump.new)
+        assert_equal({title2: ?R, value2: 4, persent2: 1, day2: 4}, quicklook.to_hash([3,"G"]))
+    end
+end
