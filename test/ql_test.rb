@@ -20,3 +20,13 @@ describe DashApp::QL::ProductDump do
         assert ?P == @w[row,column]
     end
 end
+describe DashApp::QL::ProductRevenue do
+    before do
+        @w = DashApp::QL::ProductRevenue.new
+    end
+    it "instance must answer on w[3,7] == V" do
+        row = 7
+        column = 7
+        assert ?R == @w[row,column]
+    end
+end
