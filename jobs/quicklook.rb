@@ -4,7 +4,9 @@ require "google_drive"
 @spreadsheet = @session.spreadsheet_by_title("KUHL Dashboards")
 @worksheet = @spreadsheet.worksheets.first
 
-send_event('visitors',   { value: @worksheet[4,3], persent: @worksheet[5,3]})
+quicklook = DashApp::QuickLook.new(@worksheet)
+
+send_event('visitors',   quicklook.to_hash([3,3]))
 send_event('sales',   { value: @worksheet[4,5], persent: @worksheet[5,5]})
 send_event('revenue',   { value: @worksheet[4,7], persent: @worksheet[5,7]})
 
