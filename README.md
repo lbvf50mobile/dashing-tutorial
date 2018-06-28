@@ -15,6 +15,7 @@ The purpose of this tutorial to show queue of steps for creating simple dasboard
 * [Rbenv ruby-build rbenv-env install](#droplet-install-rbenv)
 * [Smashing needs nodejs instaleld](#smashing-needs-nodejs-instaleld)
 * [Start smashing as daemon](#start-smashing-as-daemon)
+* [Some notice](#some-notice)
 
 ## Installation
 
@@ -411,6 +412,13 @@ Errno::EEXIST: File exists @ dir_s_mkdir - tmp
   - delete the `tmp` file from the repo
   - `$ smashing start -d` [instruction](https://github.com/Smashing/smashing/wiki/How-To:-Run-on-a-different-port,-or-in-production)
   - **Success**
+
+  ## Some notice
+
+  - If add `data-bind` in to a widget html it going to clear all stuff wrote in parent html.
+  - Jobs works independent of clients all the time a `Dashing` is working.
+  - Change [size of widget box 'Laying out the widgets'](http://dashing.io/#widgets) at the `assets/javascripts/application.coffee`
+  - Change [default dashboard](https://github.com/Smashing/smashing/wiki/How-To%3A-Change-the-default-dashboard) at the `config.ru`
   
 
 
