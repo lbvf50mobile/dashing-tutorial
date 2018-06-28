@@ -18,7 +18,11 @@ r = DashApp::QL::Revenue.new(@worksheet)
 ans = v.to_hash([3,"C"])
 ans = ans.merge(p.to_hash([3,"E"]))
 ans = ans.merge(r.to_hash([3,"G"]))
+ans1 = v.to_hash([3,"C"])
+ans1 = ans1.merge(p.to_hash([3,"E"]))
+ans1 = ans1.merge(r.to_hash([3,"G"]))
 send_event('ql-top',ans)
+send_event('ql-bottom',ans1)
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
     @session ||= GoogleDrive::Session.from_service_account_key("wg.json")
@@ -39,5 +43,9 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     ans = v.to_hash([3,"C"])
     ans = ans.merge(p.to_hash([3,"E"]))
     ans = ans.merge(r.to_hash([3,"G"]))
+    ans1 = v.to_hash([3,"C"])
+    ans1 = ans1.merge(p.to_hash([3,"E"]))
+    ans1 = ans1.merge(r.to_hash([3,"G"]))
     send_event('ql-top',ans)
+    send_event('ql-bottom',ans1)
 end
