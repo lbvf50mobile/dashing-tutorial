@@ -10,3 +10,13 @@ describe DashApp::QL::VisitorsDump do
         assert ?V == @w[row,column]
     end
 end
+describe DashApp::QL::ProductDump do
+    before do
+        @w = DashApp::QL::ProductDump.new
+    end
+    it "instance must answer on w[3,5] == V" do
+        row = 3
+        column = 5
+        assert ?P == @w[row,column]
+    end
+end
