@@ -13,5 +13,16 @@ module DashApp
                 ]
             end
         end
+        class RevenueDump < WorkSheetDump
+            def allowed_ceils
+                [
+                    {row_col: [3,7], value: ?R},
+                    {row_col: [4,7], value: 4},
+                    {row_col: [5,7], value: 1},
+                    {row_col: [6,7], value: 4},
+                    
+                ]
+            end
+        end
     end
 end
