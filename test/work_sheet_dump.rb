@@ -2,12 +2,13 @@ module DashApp
     class WorkSheetDump
         def initialize
             @allowed_ceils = allowed_ceils.reduce([]){|s,i| s << i[:row_col]}
+            @values = allowed_ceils.reduce({}){|s,i| s[i[:row_col]] = i[:value]; s}
         end
         def allowed_ceils
             [
-                {row_col: [3,3], valule: "Visitors"},
+                {row_col: [3,3], valule: ?V},
                 {row_col: [4,3], valule: 7},
-                {row_col: [5,3], valule: "4%"},
+                {row_col: [5,3], valule: 4},
                 
             ]
         end
