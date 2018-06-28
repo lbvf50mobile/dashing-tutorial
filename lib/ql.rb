@@ -1,6 +1,7 @@
+
 module DashApp
     module QL
-        class Visitors < QuickLook
+        class Visitors < ::DashApp::QuickLook
             def map
                 [
                     {name: :title0, offset: [0,0]},
@@ -10,7 +11,7 @@ module DashApp
                 ]
             end
         end
-        class Product < QuickLook
+        class Product < ::DashApp::QuickLook
             def map
                 [
                     {name: :title1, offset: [0,0]},
@@ -20,7 +21,7 @@ module DashApp
                 ]
             end
         end
-        class Revenue < QuickLook
+        class Revenue < ::DashApp::QuickLook
             def map
                 [
                     {name: :title2, offset: [0,0]},
