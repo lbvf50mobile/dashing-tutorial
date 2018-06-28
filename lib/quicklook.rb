@@ -4,7 +4,7 @@ module DashApp
             @worksheet = worksheet
         end
         def to_hash(top_left_ceil)
-            Hash.new
+            {title: ?V, value: 7, persent: 4}
         end
     end
 end
