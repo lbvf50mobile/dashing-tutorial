@@ -1,4 +1,4 @@
-
+require "./lib/quicklook.rb"
 module DashApp
     module QL
         class Visitors < ::DashApp::QuickLook
