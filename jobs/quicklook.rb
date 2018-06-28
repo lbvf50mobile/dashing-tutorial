@@ -10,14 +10,10 @@ send_event('visitors',   quicklook.to_hash([3,?C]))
 send_event('sales',   quicklook.to_hash([3,?E]))
 send_event('revenue',   quicklook.to_hash([3,?G]))
 
-send_event('visitors1',   { value: @worksheet[12,3], persent: @worksheet[13,3]})
-send_event('sales1',   { value: @worksheet[12,5], persent: @worksheet[13,5]})
-send_event('revenue1',   { value: @worksheet[12,7], persent: @worksheet[13,7]})
+send_event('visitors1',   quicklook.to_hash([11,?C]))
+send_event('sales1',   quicklook.to_hash([11,?E]))
+send_event('revenue1',   quicklook.to_hash([11,?G]))
 
-# Test 'Dos the jobs work when there is no connection?'
-`touch linesNew`
-`echo "Start experement." >> linesNew`
-`echo '0' >> linesNew`
 
 
 
@@ -33,10 +29,4 @@ SCHEDULER.every '1m', :first_in => 0 do |job|
     send_event('visitors1',   { value: @worksheet[12,3], persent: @worksheet[13,3]})
     send_event('sales1',   { value: @worksheet[12,5], persent: @worksheet[13,5]})
     send_event('revenue1',   { value: @worksheet[12,7], persent: @worksheet[13,7]})
-
-    # Test 'Does the jobs work hen there is not connection?'
-    val = `tail -1 linesNew`
-    val = val.to_i
-    val += 1
-    `echo #{val} >> linesNew`
 end
