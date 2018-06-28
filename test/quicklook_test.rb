@@ -27,7 +27,7 @@ end
 
 describe DashApp::QuickLook do
     it "should have a constructor than going to asseps worksheet" do
-        quicklook = DashApp::QuickLook(DashApp::WorkSheetDump.new)
+        quicklook = DashApp::QuickLook.new(DashApp::WorkSheetDump.new)
     end
 
 end
