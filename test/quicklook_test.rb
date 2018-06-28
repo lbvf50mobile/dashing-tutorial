@@ -29,5 +29,9 @@ describe DashApp::QuickLook do
     it "should have a constructor than going to asseps worksheet" do
         quicklook = DashApp::QuickLook.new(DashApp::WorkSheetDump.new)
     end
+    it "should return hash on #to_hash with top_left_ceil argument" do
+        quicklook = DashApp::QuickLook.new(DashApp::WorkSheetDump.new)
+        assert_kind_of Hash, quicklook.to_hash([3,3])
+    end
 
 end
