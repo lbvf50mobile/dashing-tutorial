@@ -1,6 +1,9 @@
 require "./test/test_helper.rb"
 require "pp"
 
+# Test Childs
+require  "./test/ql_test.rb"
+
 
 describe DashApp::WorkSheetDump do
     before do
