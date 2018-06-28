@@ -1,6 +1,7 @@
 module DashApp
     module QL
-        class Visitors < WorkSheetDump
+        class VisitorsDump < WorkSheetDump
+            
         end
     end
 end
