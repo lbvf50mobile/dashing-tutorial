@@ -42,6 +42,7 @@ task :dir do
 end
 
 task :drop do
+    get_name
     a = "widgets/#{Name[:small]}"
     %x{rm -rf #{a}}
     puts "Drom dir: #{a}".red
