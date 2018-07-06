@@ -41,3 +41,8 @@ task :dir do
     puts "create dir: #{a}".yellow
 end
 
+task :drop do
+    a = "widgets/#{Name[:small]}"
+    %x{rm -rf #{a}}
+    puts "Drom dir: #{a}".red
+end
