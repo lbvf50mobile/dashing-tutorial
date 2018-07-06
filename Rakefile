@@ -1,4 +1,5 @@
 require 'colorize'
+# alias x="rake widget 'one'" ; alias y="rake drop 'one'"
 Name = {name: nil, small: nil, big: nil}
 def get_name
     if ARGV[1]
