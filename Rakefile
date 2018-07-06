@@ -38,7 +38,6 @@ task :dir do
     get_name
     a = "widgets/#{Name[:small]}"
     %x{mkdir #{a}}
-    system("mkdir #{a}")
     puts "create dir: #{a}".yellow
 end
 
