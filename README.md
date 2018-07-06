@@ -17,6 +17,7 @@ The purpose of this tutorial to show queue of steps for creating simple dasboard
 * [Start smashing as daemon](#start-smashing-as-daemon)
 * [Some notice](#some-notice)
 * [SSHkit](#sshkit)
+* [Create Widget by Rake](#create-widget-by-rake)
 
 ## Installation
 
@@ -426,6 +427,11 @@ Errno::EEXIST: File exists @ dir_s_mkdir - tmp
   - `$ gem install sshkit`
   - `$ echo "gem 'sshkit'" >> Gemfile; bundle`
   - https://www.rubyplus.com/articles/591 need to add `include SSHKit::DSL`
+
+
+  ## Create Widget by Rake
+  - [Using arguments in rake file](http://cobwwweb.com/4-ways-to-pass-arguments-to-a-rake-task)
+  - [File tasks](https://jacobswanner.com/development/2013/rake-file-tasks/)
   
 
 

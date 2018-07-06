@@ -1,29 +1,46 @@
 require 'colorize'
-Name = {name: nil, downcase: nil, capitalize: nil}
+Name = {name: nil, small: nil, big: nil}
 def get_name
     if ARGV[1]
         Name[:name] ||= ARGV[1]
-        Name[:downcase] ||= ARGV[1]
-        Name[:capitalize] ||= ARGV[1]
+        Name[:small] ||= ARGV[1].downcase
+        Name[:big] ||= ARGV[1].capitalize
     end
+    raise "Please add name argument for the rake taks" unless Name[:name]
+end
+def filename
+    "widgets/#{Name[:small]}/#{Name[:small]}"
 end
 task :widget => %i{scss html coffee} do
     get_name
     p ARGV[1]
 end
 
-task :scss do
+task :scss=>%i{dir} do
     get_name
-    puts "I create sccs".green 
+    puts "I create scss: #{filename}.scss".green
+    # touch "#{filename}.scss" 
 end
 
-task :html do
+task :html=>%i{dir}  do
     get_name
-    puts "I create html".green
+    puts "I create html: #{filename}.html".green
+    # touch "#{filename}.html"
 end
 
-task :coffee do
+task :coffee=>%i{dir}  do
     get_name
-    puts "I create coffee".green
+    puts "I create coffee: #{filename}.coffee".green
+    # touch "#{filename}.coffee"
+end
+
+task :dir do
+    get_name
+    p "I going to create"
+    a = "widgets/#{Name[:small]}"
+    p "mkdir #{a}"
+    %x{mkdir #{a}}
+    system("mkdir #{a}")
+    puts "create dir: #{Name[:small]}".yellow
 end
 

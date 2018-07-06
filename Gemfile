@@ -8,3 +8,4 @@ gem 'minitest'
 gem "google_drive"
 # gem 'google-api-client'
 gem 'sshkit'
+gem 'colorize'
