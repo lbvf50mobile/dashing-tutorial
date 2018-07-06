@@ -13,34 +13,32 @@ def filename
 end
 task :widget => %i{scss html coffee} do
     get_name
-    p ARGV[1]
+    puts "This is widget task".red
 end
 
 task :scss=>%i{dir} do
     get_name
     puts "I create scss: #{filename}.scss".green
-    # touch "#{filename}.scss" 
+    touch "#{filename}.scss" 
 end
 
 task :html=>%i{dir}  do
     get_name
     puts "I create html: #{filename}.html".green
-    # touch "#{filename}.html"
+    touch "#{filename}.html"
 end
 
 task :coffee=>%i{dir}  do
     get_name
     puts "I create coffee: #{filename}.coffee".green
-    # touch "#{filename}.coffee"
+    touch "#{filename}.coffee"
 end
 
 task :dir do
     get_name
-    p "I going to create"
     a = "widgets/#{Name[:small]}"
-    p "mkdir #{a}"
     %x{mkdir #{a}}
     system("mkdir #{a}")
-    puts "create dir: #{Name[:small]}".yellow
+    puts "create dir: #{a}".yellow
 end
 
