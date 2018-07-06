@@ -16,6 +16,7 @@ The purpose of this tutorial to show queue of steps for creating simple dasboard
 * [Smashing needs nodejs instaleld](#smashing-needs-nodejs-instaleld)
 * [Start smashing as daemon](#start-smashing-as-daemon)
 * [Some notice](#some-notice)
+* [SSHkit](#sshkit)
 
 ## Installation
 
@@ -419,6 +420,12 @@ Errno::EEXIST: File exists @ dir_s_mkdir - tmp
   - Jobs works independent of clients all the time a `Dashing` is working.
   - Change [size of widget box 'Laying out the widgets'](http://dashing.io/#widgets) at the `assets/javascripts/application.coffee`. Also it's possible to do it at the dashboard `.erb` file, as like as `dashboards/sampletv.erb`.
   - Change [default dashboard](https://github.com/Smashing/smashing/wiki/How-To%3A-Change-the-default-dashboard) at the `config.ru`
+
+  ## SSHkit
+
+  - `$ gem install sshkit`
+  - `$ echo "gem 'sshkit'" >> Gemfile; bundle`
+  - https://www.rubyplus.com/articles/591 need to add `include SSHKit::DSL`
   
 
 
