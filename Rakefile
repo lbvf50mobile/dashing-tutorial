@@ -35,7 +35,7 @@ namespace :smashing do
         set_name(args[:name])
         puts "Create scss file: #{filename}".magenta
     end
-    desc "Create html file for widget: #{filename}"
+    desc "Create html file for widget"
     task :html, [:name] do |task, args|
         set_name(args[:name])
         puts "Create html file: #{filename}".magenta
@@ -44,5 +44,8 @@ namespace :smashing do
     task :coffee, [:name] do |task, args|
         set_name(args[:name])
         puts "Create coffee file: #{filename}".magenta
+    end
+    desc "Create dir for widget"
+    task :dir, [:name] do |task, args|
     end
 end
