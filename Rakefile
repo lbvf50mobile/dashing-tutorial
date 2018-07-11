@@ -1,21 +1,37 @@
 require 'colorize'
-# thanks for @EgorBazhenov
 # alias x='rake widget["newwidget"]'
-task :widget,[:name] => %i{with_args no_args} do |task,args|
-    puts "Widget task".green
-    p task
-    p args
-    p args[:name]
+
+# [:black, :light_black, :red, :light_red, :green, 
+# :light_green, :yellow, :light_yellow, :blue,
+# :light_blue, :magenta, :light_magenta, :cyan, :light_cyan, :white, :light_white, :default]
+
+Name = {name: nil, small: nil, big: nil}
+def set_name(name = nil)
+    if name
+        Name[:name] ||= name
+        Name[:small] ||= name.downcase
+        Name[:big] ||= name.capitalize
+    end
+    raise "Please add name argument for the rake taks" unless Name[:name]
+    Name[:name]
 end
-task :with_args,[:name] do |task, args|
-    puts "With Args task".yellow
-    p task
-    p args
-    p args[:name]
+
+
+task :widget,[:name] => %w{ smashing:scss smashing:html smashing:coffee} do |task,args|
+    puts "Create Widget".green
+
+    args[:name]
 end
-task :no_args do |task, args|
-    puts "No Args tasks".red
-    p task
-    p args
-    p args[:name]
+
+
+namespace :smashing do
+    task :scss do
+        puts "Create scss file".magenta
+    end
+    task :html do
+        puts "Create html file".magenta
+    end
+    task :coffee do
+        puts "Create coffee file".magenta
+    end
 end
