@@ -15,23 +15,34 @@ def set_name(name = nil)
     raise "Please add name argument for the rake taks" unless Name[:name]
     Name[:name]
 end
+def filename
+    "widgets/#{Name[:small]}/#{Name[:small]}"
+end
 
 
+desc "Create Smasghing widget in /widgets diretory"
 task :widget,[:name] => %w{ smashing:scss smashing:html smashing:coffee} do |task,args|
-    puts "Create Widget".green
+    set_name(args[:name])
+    puts "Create Widget: #{Name[:name]}".green
 
-    args[:name]
+    
 end
 
 
 namespace :smashing do
-    task :scss do
-        puts "Create scss file".magenta
+    desc "Create scss file for widget"
+    task :scss, [:name] do |task, args|
+        set_name(args[:name])
+        puts "Create scss file: #{filename}".magenta
     end
-    task :html do
-        puts "Create html file".magenta
+    desc "Create html file for widget: #{filename}"
+    task :html, [:name] do |task, args|
+        set_name(args[:name])
+        puts "Create html file: #{filename}".magenta
     end
-    task :coffee do
-        puts "Create coffee file".magenta
+    desc "Create coffie file for widget"
+    task :coffee, [:name] do |task, args|
+        set_name(args[:name])
+        puts "Create coffee file: #{filename}".magenta
     end
 end
